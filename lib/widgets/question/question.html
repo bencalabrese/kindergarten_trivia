@@ -1,6 +1,9 @@
 <li>{{question.text}}</li>
 <material-button
-    *ngFor="let possibleAnswer of question.possibleAnswers"
+    *ngFor="let possibleAnswer of question.possibleAnswers; let i=index"
+    raised
+    [class.blue]="i.isEven"
+    [class.red]="i.isOdd"
     (trigger)="handleAnswer(possibleAnswer)">
   {{possibleAnswer.text}}
 </material-button>

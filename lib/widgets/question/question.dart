@@ -6,6 +6,9 @@ import 'package:kindergarten_trivia/models/question/question.dart';
 @Component(
     selector: 'question',
     templateUrl: 'question.html',
+    styleUrls: const [
+      'question.css'
+    ],
     directives: const [
       MaterialButtonComponent,
       NgFor,
