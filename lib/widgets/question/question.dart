@@ -1,4 +1,5 @@
 import 'package:angular/angular.dart';
+import 'package:kindergarten_trivia/models/question/question.dart';
 
 @Component(
   selector: 'question',
@@ -6,5 +7,5 @@ import 'package:angular/angular.dart';
 )
 class QuestionComponent {
   @Input()
-  int questionNumber;
+  Question question;
 }
