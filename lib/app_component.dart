@@ -4,14 +4,7 @@ import 'package:kindergarten_trivia/widgets/question/question.dart';
 
 @Component(
   selector: 'my-app',
-  template: '''
-  <h1>Hello Kindergarten</h1>
-  <ul>
-    <question
-        *ngFor="let question of questions; let index = index"
-        [questionNumber]="index + 1">
-    </question>
-  ''',
+  templateUrl: 'app_component.html',
   directives: const [
     NgFor,
     QuestionComponent,

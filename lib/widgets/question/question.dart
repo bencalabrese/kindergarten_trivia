@@ -2,7 +2,7 @@ import 'package:angular/angular.dart';
 
 @Component(
   selector: 'question',
-  template: '<li>I am question number {{questionNumber}}</li>',
+  templateUrl: 'question.html',
 )
 class QuestionComponent {
   @Input()

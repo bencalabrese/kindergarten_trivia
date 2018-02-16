@@ -1,0 +1,7 @@
+<h1>Hello Kindergarten</h1>
+<ul>
+  <question
+      *ngFor="let question of questions; let index = index"
+      [questionNumber]="index + 1">
+  </question>
+</ul>
