@@ -1,1 +1,6 @@
 <li>{{question.text}}</li>
+<material-button
+    *ngFor="let possibleAnswer of question.possibleAnswers"
+    (trigger)="handleAnswer(possibleAnswer)">
+  {{possibleAnswer.text}}
+</material-button>
