@@ -7,6 +7,9 @@ import 'package:kindergarten_trivia/widgets/question/question.dart';
 @Component(
   selector: 'my-app',
   templateUrl: 'app_component.html',
+    styleUrls: const [
+    'app_component.css'
+  ],
   directives: const [
     QuestionComponent,
     MaterialButtonComponent,
