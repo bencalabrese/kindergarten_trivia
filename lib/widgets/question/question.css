@@ -22,13 +22,3 @@ material-button {
 .proceed-button {
   margin-top: 40px;
 }
-
-:host ::ng-deep material-button.red {
-  background-color: #F44336;
-  color: #fff;
-}
-
-:host ::ng-deep material-button.blue {
-  background-color: #4285f4;
-  color: #fff;
-}
