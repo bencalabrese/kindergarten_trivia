@@ -1,0 +1,37 @@
+<h1>Kindergarten Trivia!</h1>
+
+<div [ngSwitch]="gameState" class="game-page">
+  <div *ngSwitchCase="GameState.unstarted" class="unstarted-page">
+    <h2>Answer the questions to find the treasure.</h2>
+    <material-button
+        raised
+        class="blue"
+        (trigger)="gameState = GameState.inProgress">
+      Start the game!
+    </material-button>
+  </div>
+    
+  <question
+      *ngSwitchCase="GameState.inProgress"
+      [question]="currentQuestion"
+      (onProceed)="handleCorrectAnswer()">
+  </question>
+  
+  <div *ngSwitchCase="GameState.finished" class="treasure-page">
+    <img src="assets/treasure.png"/>
+    <material-button raised class="blue" (trigger)="gameState = GameState.treasure">
+      Open the treasure!
+    </material-button>
+  </div>
+
+
+  <marquee
+      *ngSwitchCase="GameState.treasure"
+      scrollamount="12"
+      direction="right">
+    <div class="combined-image">
+      <img class="pete" src="assets/pete.png">
+      <img class="skateboard" src="assets/skateboard.jpg">
+    </div>
+  </marquee>
+</div>

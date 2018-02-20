@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+  padding: 40px 0;
+}
+
+.treasure-page, .unstarted-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.treasure-page img {
+    width: 400px;
+    height: auto;
+}
+
+.treasure-page material-button {
+    margin-top: 40px;
+}
+
+marquee {
+    width: 100%;
+}
+
+.pete {
+    position: relative;
+    right: 10px;
+    top: 38px;
+}
+
+.skateboard {
+    height: 80px;
+}
+
+.combined-image img {
+    display: block;
+}
