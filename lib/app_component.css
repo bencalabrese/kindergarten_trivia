@@ -5,11 +5,17 @@
   justify-content: center;
 }
 
+.game-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
   padding-bottom: 40px;
 }
 
-.treasure-page {
+.treasure-page, .unstarted-page {
     display: flex;
     flex-direction: column;
 }
@@ -21,4 +27,22 @@ h1 {
 
 .treasure-page material-button {
     margin-top: 40px;
+}
+
+marquee {
+    width: 100%;
+}
+
+.pete {
+    position: relative;
+    right: 10px;
+    top: 38px;
+}
+
+.skateboard {
+    height: 80px;
+}
+
+.combined-image img {
+    display: block;
 }
