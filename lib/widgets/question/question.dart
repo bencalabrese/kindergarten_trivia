@@ -14,22 +14,35 @@ import 'package:kindergarten_trivia/models/question/question.dart';
     directives: const [
       MaterialButtonComponent,
       NgFor,
+      NgIf,
     ])
-class QuestionComponent {
-  final _onCorrect = new StreamController<Null>.broadcast();
+class QuestionComponent implements OnChanges {
+  final _onProceed = new StreamController<Null>.broadcast();
+
+  bool readyToProceed;
+  bool showValidation;
 
   @Input()
   Question question;
 
   @Output()
-  Stream<Null> get onCorrect => _onCorrect.stream;
+  Stream<Null> get onProceed => _onProceed.stream;
 
   void handleAnswer(Answer answer) {
     if (question.isCorrect(answer)) {
-      print('hooray!');
-      _onCorrect.add(null);
+      readyToProceed = true;
     } else {
-      print('boo');
+      showValidation = true;
     }
+  }
+
+  void proceed() {
+    _onProceed.add(null);
+  }
+
+  @override
+  ngOnChanges(Map<String, SimpleChange> changes) {
+    readyToProceed = false;
+    showValidation = false;
   }
 }

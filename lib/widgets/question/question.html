@@ -1,11 +1,26 @@
-<h2>{{question.text}}</h2>
-<div class="buttons">
+<section *ngIf="!readyToProceed">
+  <h2>{{question.text}}</h2>
+  <div class="buttons">
+    <material-button
+        *ngFor="let possibleAnswer of question.possibleAnswers; let i=index"
+        raised
+        [class.blue]="i.isEven"
+        [class.red]="i.isOdd"
+        (trigger)="handleAnswer(possibleAnswer)">
+      {{possibleAnswer.text}}
+    </material-button>
+  </div>
+  <div class="validation" *ngIf="showValidation">
+    Oops! That wasn't right. Wanna try again?
+  </div>
+</section>
+
+<section *ngIf="readyToProceed">
+  <div>You got it!</div>
   <material-button
-      *ngFor="let possibleAnswer of question.possibleAnswers; let i=index"
       raised
-      [class.blue]="i.isEven"
-      [class.red]="i.isOdd"
-      (trigger)="handleAnswer(possibleAnswer)">
-    {{possibleAnswer.text}}
+      class="blue proceed-button"
+      (trigger)="proceed()">
+    Next
   </material-button>
-</div>
+</section>

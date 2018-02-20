@@ -12,7 +12,7 @@
   <question
       *ngSwitchCase="GameState.inProgress"
       [question]="currentQuestion"
-      (onCorrect)="handleCorrectAnswer()">
+      (onProceed)="handleCorrectAnswer()">
   </question>
   
   <material-button

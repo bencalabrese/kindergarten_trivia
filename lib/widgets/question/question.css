@@ -1,9 +1,26 @@
+section {
+  display: flex;
+  flex-direction: column;
+}
+
 .buttons {
   display: flex;
 }
 
 material-button {
   flex-grow: 1;
+}
+
+.validation {
+  color: #F44336;
+  text-decoration: underline;
+  align-self: center;
+  padding-top: 40px;
+  font-weight: bold;
+}
+
+.proceed-button {
+  margin-top: 40px;
 }
 
 :host ::ng-deep material-button.red {
