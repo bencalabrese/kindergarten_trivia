@@ -8,3 +8,17 @@
 h1 {
   padding-bottom: 40px;
 }
+
+.treasure-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.treasure-page img {
+    width: 400px;
+    height: auto;
+}
+
+.treasure-page material-button {
+    margin-top: 40px;
+}

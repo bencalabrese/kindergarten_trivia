@@ -15,13 +15,13 @@
       (onProceed)="handleCorrectAnswer()">
   </question>
   
-  <material-button
-      *ngSwitchCase="GameState.finished"
-      raised
-      class="blue"
-      (trigger)="gameState = GameState.treasure">
-    Open the treasure!
-  </material-button>
+  <div *ngSwitchCase="GameState.finished" class="treasure-page">
+    <img src="http://clipartpost.com/wp-content/uploads/2017/12/Pictures-of-treasure-chests-free-download-clip-art.png"/>
+    <material-button raised class="blue" (trigger)="gameState = GameState.treasure">
+      Open the treasure!
+    </material-button>
+  </div>
+
 
   <div *ngSwitchCase="GameState.treasure">
     Treasure!
