@@ -1,7 +1,29 @@
-<h1>Hello Kindergarten</h1>
-<ul>
+<h1>Kindergarten Trivia!</h1>
+
+<div [ngSwitch]="gameState">
+  <material-button
+      *ngSwitchCase="GameState.unstarted"
+      raised
+      class="blue"
+      (trigger)="gameState = GameState.inProgress">
+      Start the game!
+  </material-button>
+    
   <question
-      *ngFor="let question of questions"
-      [question]="question">
+      *ngSwitchCase="GameState.inProgress"
+      [question]="currentQuestion"
+      (onCorrect)="handleCorrectAnswer()">
   </question>
-</ul>
+  
+  <material-button
+      *ngSwitchCase="GameState.finished"
+      raised
+      class="blue"
+      (trigger)="gameState = GameState.treasure">
+    Open the treasure!
+  </material-button>
+
+  <div *ngSwitchCase="GameState.treasure">
+    Treasure!
+  </div>
+</div>
